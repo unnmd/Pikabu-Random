@@ -7,45 +7,45 @@ from django.db import connection
 
 
 @json_view
-def anypost(request):
+def anypost(request, pron, my):
 	cursor = connection.cursor()
-	cursor.execute("SELECT story_id FROM `storys` WHERE `ratio` > 1 ORDER BY RAND() LIMIT 1")
+	cursor.execute("SELECT story_id FROM `storys` WHERE `ratio` > 1 AND pron = %s AND my = %s ORDER BY RAND() LIMIT 1", [pron, my] )
 	row = cursor.fetchone()
 	return {
 	    'vratio': list(row),
     	}
 
 @json_view
-def hundred(request):
+def hundred(request, pron, my):
 	cursor = connection.cursor()
-	cursor.execute("SELECT story_id FROM `storys` WHERE `ratio` > 100 ORDER BY RAND() LIMIT 1")
+	cursor.execute("SELECT story_id FROM `storys` WHERE `ratio` > 100 AND pron = %s AND my = %s ORDER BY RAND() LIMIT 1", [pron, my])
 	row = cursor.fetchone()
 	return {
 	    'vratio': list(row),
     	}
 
 @json_view
-def fivehundred(request):
+def fivehundred(request, pron, my):
 	cursor = connection.cursor()
-	cursor.execute("SELECT story_id FROM `storys` WHERE `ratio` > 500 ORDER BY RAND() LIMIT 1")
+	cursor.execute("SELECT story_id FROM `storys` WHERE `ratio` > 500  AND pron = %s AND my = %s ORDER BY RAND() LIMIT 1", [pron, my])
 	row = cursor.fetchone()
 	return {
 	    'vratio': list(row),
     	}
 
 @json_view
-def thousand(request):
+def thousand(request, pron, my):
 	cursor = connection.cursor()
-	cursor.execute("SELECT story_id FROM `storys` WHERE `ratio` > 1000 ORDER BY RAND() LIMIT 1")
+	cursor.execute("SELECT story_id FROM `storys` WHERE `ratio` > 1000 AND pron = %s AND my = %s ORDER BY RAND() LIMIT 1", [pron, my])
 	row = cursor.fetchone()
 	return {
 	    'vratio': list(row),
     	}
 
 @json_view
-def threethousand(request):
+def threethousand(request, pron, my):
 	cursor = connection.cursor()
-	cursor.execute("SELECT story_id FROM `storys` WHERE `ratio` > 3000 ORDER BY RAND() LIMIT 1")
+	cursor.execute("SELECT story_id FROM `storys` WHERE `ratio` > 3000 AND pron = %s AND my = %s ORDER BY RAND() LIMIT 1", [pron, my])
 	row = cursor.fetchone()
 	return {
 	    'vratio': list(row),

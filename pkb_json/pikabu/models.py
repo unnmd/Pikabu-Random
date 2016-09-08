@@ -21,14 +21,15 @@ class Categorys(models.Model):
 
 
 class Storys(models.Model):
-    story_id = models.IntegerField()
+    story_id = models.IntegerField(primary_key=True)
     date = models.DateTimeField(blank=True, null=True)
     ratio = models.IntegerField(blank=True, null=True)
-    user = models.ForeignKey('Users', models.DO_NOTHING, db_column='user')
+    my = models.IntegerField(blank=True, null=True)
     pron = models.IntegerField(blank=True, null=True)
     del_field = models.IntegerField(db_column='del', blank=True, null=True)  # Field renamed because it was a Python reserved word.
-    category = models.ForeignKey(Categorys, models.DO_NOTHING, db_column='category')
     href = models.TextField(blank=True, null=True)
+    category = models.ForeignKey(Categorys, models.DO_NOTHING, db_column='category')
+    user = models.ForeignKey('Users', models.DO_NOTHING, db_column='user')
 
     class Meta:
         managed = True
@@ -46,7 +47,7 @@ class Tags(models.Model):
 
 
 class TagsInStorys(models.Model):
-    story = models.IntegerField()
+    story = models.ForeignKey(Storys, models.DO_NOTHING, db_column='story')
     tag = models.ForeignKey(Tags, models.DO_NOTHING, db_column='tag')
 
     class Meta:
