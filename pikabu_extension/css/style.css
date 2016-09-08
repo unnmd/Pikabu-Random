@@ -1,0 +1,52 @@
+/*td.comment_msg > a {
+	display: none !important;
+}
+
+td.comment_msg > a + div {
+	display: block !important; 
+	opacity: .3;
+}
+
+td.comment_msg > a + div:hover {
+	opacity: 1;		
+}*/
+
+.extInfoSendIcon {
+	margin-left: 1px;
+}
+
+.extInfoRatingIcon {
+	margin-left:12px; 
+	vertical-align: top;
+}
+
+span img.extInfoRatingIcon {
+	padding-top:4px; 	
+}
+
+img.extInfoGenderIcon {
+	margin-left: 10px;
+}
+
+img.extInfoAwardIcon {
+	margin-left: 10px;
+}
+
+.extInfoText {
+	font-size: 11px;
+	margin-right:0px;
+	margin-left:4px !important;
+}
+
+a[title="ссылка на данный комментарий"] {
+	margin-left: 8px !important;
+}
+
+/* увеличение аватарок при наведении */
+
+/*img[src*="avatars"]:hover { 	
+	width: 48px !important;
+	height: 48px !important;
+	vertical-align: middle !important;
+}
+*/

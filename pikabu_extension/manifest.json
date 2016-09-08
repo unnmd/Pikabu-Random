@@ -1,0 +1,18 @@
+{
+   "content_scripts": [ {
+      "css": [ "css/powerange.min.css", "css/style.css" ],
+      "js": [ "js/powerange.min.js" ,"js/jquery.min.js", "js/script.js"],
+      "matches": [ "*://pikabu.ru/*" ]
+   } ],
+   "description": "Pikabu Random - случайные посты для сайта pikabu.ru",
+   "icons": {
+      "128": "icon.png"
+   },
+   "key": "",
+   "manifest_version": 2,
+   "name": "Pikabu Random",
+   "description" : "Random pikabu.",
+   "permissions": [ "tabs", "activeTab", "http://pikabu.ru/*", "https://pikabu.ru/*" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "0.1"
+}
